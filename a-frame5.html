@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+  </head>
+  <body>
+    <a-scene>
+      <a-assets>
+        <a-asset-item id="tree" src="tree.gltf"></a-asset-item>
+      </a-assets>
+      <a-light type="ambient" color="#00202e"></a-light>
+      <a-light type="point" intensity="50" position="2 10 4" light=""></a-light>
+
+      <a-sky color="#000000"></a-sky>
+      
+      <!-- Using the asset management system with increased scale -->
+      <a-gltf-model src="#tree" position="0 0 -5" scale="5 5 5"></a-gltf-model>
+      
+      <!-- Defining the URL inline with increased scale -->
+      <a-gltf-model src="level5_green.glb" position="2 0 -5" scale="10 10 10"></a-gltf-model>
+      
+      <!-- Camera with slower movement controls -->
+      <a-entity 
+        camera 
+        position="0 -7 3"
+        wasd-controls="acceleration: 5"
+        look-controls="pointerLockEnabled: true">
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
